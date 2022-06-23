@@ -17,11 +17,12 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var humidityLabel: UILabel!
     @IBOutlet private weak var celsiusButton: UIButton!
     @IBOutlet private weak var fahrenheitButton: UIButton!
-
+    @IBOutlet private weak var rightItem: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNav()
         setupUI()
+        addNav()
     }
     
     func setupUI() {
@@ -39,23 +40,21 @@ class MainViewController: UIViewController {
     }
 
     func addNav() {
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 32, width: view.frame.size.width, height: 44))
-        navBar.setBackgroundImage(UIImage(), for: .default)
-        navBar.shadowImage = UIImage()
-        navBar.isTranslucent = true
-        view.addSubview(navBar)
-
-        let navItem = UINavigationItem(title: "")
-        let rightItem = UIBarButtonItem(title: "Show More", style: .plain, target: self, action: #selector(onShowDetail5Days))
-        rightItem.tintColor = .black
-        navItem.rightBarButtonItem = rightItem
-
-        navBar.setItems([navItem], animated: false)
+        let button = UIBarButtonItem(title: "Show More", style: .plain, target: self, action: #selector(onShowDetail5Days))
+        button.tintColor = .white
+        rightItem.rightBarButtonItem = button
+        self.navigationController?.navigationBar.setItems([rightItem], animated: false)
     }
 
     @objc func onShowDetail5Days() {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CityDetailViewController") as? CityDetailViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
+        if model.cityWeather != nil {
+            let sb = UIStoryboard(name: "CityDetail", bundle: nil)
+            if let vc = sb.instantiateInitialViewController() as? CityDetailViewController {
+                vc.listData = model.listWeather
+                vc.currentWeather = model.currentWeather
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     
     private func updateTemperature() {

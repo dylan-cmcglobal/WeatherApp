@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E3AAC1728641105008A645C /* CityDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E3AAC1628641105008A645C /* CityDetail.storyboard */; };
+		3E3AAC2328644019008A645C /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AAC2128644019008A645C /* WeatherTableViewCell.swift */; };
+		3E3AAC2428644019008A645C /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3AAC2228644019008A645C /* WeatherTableViewCell.xib */; };
+		3E3AAC26286443C2008A645C /* WeatherOfCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AAC25286443C2008A645C /* WeatherOfCity.swift */; };
 		3ED651662862B2C800220FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED651652862B2C800220FDF /* AppDelegate.swift */; };
 		3ED651682862B2C800220FDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED651672862B2C800220FDF /* SceneDelegate.swift */; };
 		3ED6516A2862B2C800220FDF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED651692862B2C800220FDF /* MainViewController.swift */; };
@@ -44,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E3AAC1628641105008A645C /* CityDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityDetail.storyboard; sourceTree = "<group>"; };
+		3E3AAC2128644019008A645C /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		3E3AAC2228644019008A645C /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
+		3E3AAC25286443C2008A645C /* WeatherOfCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherOfCity.swift; sourceTree = "<group>"; };
 		3ED651622862B2C800220FDF /* WeatherMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ED651652862B2C800220FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ED651672862B2C800220FDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E3AAC2028643FFA008A645C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3E3AAC2128644019008A645C /* WeatherTableViewCell.swift */,
+				3E3AAC2228644019008A645C /* WeatherTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3ED651592862B2C800220FDF = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +168,7 @@
 			children = (
 				3ED6519B2862F3B200220FDF /* Weather.swift */,
 				3ED651AB2863190F00220FDF /* WeatherError.swift */,
+				3E3AAC25286443C2008A645C /* WeatherOfCity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,7 +211,9 @@
 		C81C3AC6286384DA00DF3C13 /* DetailViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3E3AAC2028643FFA008A645C /* Cells */,
 				C81C3AC72863850200DF3C13 /* CityDetailViewController.swift */,
+				3E3AAC1628641105008A645C /* CityDetail.storyboard */,
 			);
 			path = DetailViewController;
 			sourceTree = "<group>";
@@ -309,7 +329,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E3AAC1728641105008A645C /* CityDetail.storyboard in Resources */,
 				3ED651722862B2CA00220FDF /* LaunchScreen.storyboard in Resources */,
+				3E3AAC2428644019008A645C /* WeatherTableViewCell.xib in Resources */,
 				3ED6516F2862B2CA00220FDF /* Assets.xcassets in Resources */,
 				3ED6516D2862B2C800220FDF /* Main.storyboard in Resources */,
 			);
@@ -338,11 +360,13 @@
 			files = (
 				3ED6519C2862F3B200220FDF /* Weather.swift in Sources */,
 				3ED6516A2862B2C800220FDF /* MainViewController.swift in Sources */,
+				3E3AAC2328644019008A645C /* WeatherTableViewCell.swift in Sources */,
 				3ED651A52862FC6100220FDF /* WeatherRDS.swift in Sources */,
 				3ED6519F2862F76D00220FDF /* Constant.swift in Sources */,
 				C81C3AC92863850200DF3C13 /* CityDetailViewController.swift in Sources */,
 				3ED651662862B2C800220FDF /* AppDelegate.swift in Sources */,
 				3ED651682862B2C800220FDF /* SceneDelegate.swift in Sources */,
+				3E3AAC26286443C2008A645C /* WeatherOfCity.swift in Sources */,
 				3ED651A72862FD3000220FDF /* HTTPMethod.swift in Sources */,
 				3ED651AC2863190F00220FDF /* WeatherError.swift in Sources */,
 				3ED651AA28630B7700220FDF /* MainViewModel.swift in Sources */,
@@ -525,7 +549,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -552,7 +576,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
