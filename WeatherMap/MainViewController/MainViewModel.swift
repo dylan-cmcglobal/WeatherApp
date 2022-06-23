@@ -7,6 +7,20 @@
 
 import Foundation
 
+enum MainWeather: String {
+    case clear
+    case clouds
+    case rain
+    case snow
+    case wind
+}
+
+enum TempUnit: String {
+    case celsius
+    case fahrenheit
+    case kelvin
+}
+
 protocol MainViewDelegate: NSObjectProtocol {
     func didGetData()
 }
@@ -14,8 +28,8 @@ protocol MainViewDelegate: NSObjectProtocol {
 class MainViewModel {
     var weatherRDS: WeatherRDS
     var cityWeather: WeatherBaseResponse?
-    var isCelsius: Bool = false
     weak var delegate: MainViewDelegate?
+    var currentTempUnit: TempUnit = .kelvin
     
     init() {
         weatherRDS = WeatherRDS()
@@ -35,16 +49,17 @@ class MainViewModel {
         })
     }
     
-    func updateUnit() {
-        isCelsius = !isCelsius
-    }
-    
-    func changeTempUnit() -> String {
+    func returnTemp() -> String {
         if let cityWeather = cityWeather {
-            if !isCelsius {
-                return String(format: "%.2f", ((cityWeather.main?.temp ?? 0) - 32) / 1.8)
-            } else {
-                return String(format: "%.2f", cityWeather.main?.temp ?? 0)
+            switch currentTempUnit {
+            case .celsius:
+                let temp = cityWeather.main?.temp ?? 0
+                return "\(String(format: "%.2f", temp - 273.15))°C"
+            case .fahrenheit:
+                let temp = cityWeather.main?.temp ?? 0
+                return "\(String(format: "%.2f", 1.8 * (temp - 273) + 32))°F"
+            case .kelvin:
+                return "\(String(format: "%.2f", cityWeather.main?.temp ?? 0))°K"
             }
         }
         return ""

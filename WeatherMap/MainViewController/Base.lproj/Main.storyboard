@@ -24,22 +24,22 @@
             </objects>
             <point key="canvasLocation" x="-1174" y="134"/>
         </scene>
-        <!--WEATHER-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="WeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="WeatherMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_weather" translatesAutoresizingMaskIntoConstraints="NO" id="d5q-4a-xT6">
-                                <rect key="frame" x="16" y="88" width="382" height="164"/>
+                                <rect key="frame" x="16" y="76" width="382" height="164"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="164" id="106-L4-NnH"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8xY-oh-s2P">
-                                <rect key="frame" x="16" y="276" width="382" height="44"/>
+                                <rect key="frame" x="16" y="264" width="382" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="hex-7u-qO0"/>
                                 </constraints>
@@ -47,7 +47,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PVz-c4-YSV">
-                                <rect key="frame" x="16" y="344" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="332" width="382" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwL-Ny-3Di">
                                         <rect key="frame" x="0.0" y="0.0" width="191" height="20.5"/>
@@ -63,54 +63,85 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1p-8W-4fq">
-                                <rect key="frame" x="16" y="376.5" width="71" height="32"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="k2z-Av-roR"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Celsius">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="onTapChangeUnitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O6j-GI-G8x"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="lIQ-qX-VaX">
+                                <rect key="frame" x="16" y="368.5" width="209" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1p-8W-4fq">
+                                        <rect key="frame" x="0.0" y="0.0" width="92.5" height="31"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Celsius">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onTapCelsiusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MFV-OB-6xg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvs-87-CzU">
+                                        <rect key="frame" x="116.5" y="0.0" width="92.5" height="31"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Fahrenheit">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onTapFahrenheitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rjf-Di-ANx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.32156862745098036" green="0.77647058823529413" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8xY-oh-s2P" secondAttribute="trailing" constant="16" id="3yZ-Sg-kxu"/>
                             <constraint firstItem="d5q-4a-xT6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5WJ-pz-1gY"/>
-                            <constraint firstItem="d1p-8W-4fq" firstAttribute="top" secondItem="PVz-c4-YSV" secondAttribute="bottom" constant="12" id="9Ru-hN-XDm"/>
                             <constraint firstItem="8xY-oh-s2P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="E67-hg-F3e"/>
                             <constraint firstItem="8xY-oh-s2P" firstAttribute="top" secondItem="d5q-4a-xT6" secondAttribute="bottom" constant="24" id="Gy3-VH-g5F"/>
-                            <constraint firstItem="d5q-4a-xT6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MQs-fM-acD"/>
-                            <constraint firstItem="d1p-8W-4fq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="RX2-nh-1oF"/>
+                            <constraint firstItem="d5q-4a-xT6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="76" id="MQs-fM-acD"/>
+                            <constraint firstItem="lIQ-qX-VaX" firstAttribute="top" secondItem="PVz-c4-YSV" secondAttribute="bottom" constant="16" id="OW4-u4-ckl"/>
+                            <constraint firstItem="lIQ-qX-VaX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XNj-St-7Az"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d5q-4a-xT6" secondAttribute="trailing" constant="16" id="asA-9Z-gFL"/>
                             <constraint firstItem="PVz-c4-YSV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cAz-Hl-cKT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PVz-c4-YSV" secondAttribute="trailing" constant="16" id="sr5-M7-LNl"/>
                             <constraint firstItem="PVz-c4-YSV" firstAttribute="top" secondItem="8xY-oh-s2P" secondAttribute="bottom" constant="24" id="wdP-yA-gTf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d1p-8W-4fq" secondAttribute="trailing" constant="16" id="y6S-MC-tHR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="WEATHER" leftItemsSupplementBackButton="YES" id="Alc-iE-Sc8"/>
+                    <navigationItem key="navigationItem" id="5Sp-qT-F6s"/>
                     <connections>
+                        <outlet property="celsiusButton" destination="d1p-8W-4fq" id="jTX-HV-Dgn"/>
+                        <outlet property="fahrenheitButton" destination="Wvs-87-CzU" id="xvv-Yu-pZ2"/>
                         <outlet property="humidityLabel" destination="kKS-1n-HDy" id="q40-YB-vUu"/>
                         <outlet property="searchTextField" destination="8xY-oh-s2P" id="gyJ-g6-aCC"/>
                         <outlet property="statusImageView" destination="d5q-4a-xT6" id="Snx-cI-iHq"/>
                         <outlet property="temperatureLabel" destination="kwL-Ny-3Di" id="ZjQ-PC-Fd3"/>
-                        <outlet property="unitButton" destination="d1p-8W-4fq" id="hPp-ZD-DTG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-159" y="151"/>
         </scene>
+        <!--City Detail View Controller-->
+        <scene sceneID="NqW-Go-mkU">
+            <objects>
+                <viewController storyboardIdentifier="CityDetailViewController" id="hlz-bZ-Wsu" customClass="CityDetailViewController" customModule="WeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="25M-93-VCe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VeS-3S-3jz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogq-Fq-j00" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="612" y="151"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_weather" width="76" height="76"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

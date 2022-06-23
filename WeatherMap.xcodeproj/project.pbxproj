@@ -23,6 +23,7 @@
 		3ED651AA28630B7700220FDF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED651A928630B7700220FDF /* MainViewModel.swift */; };
 		3ED651AC2863190F00220FDF /* WeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED651AB2863190F00220FDF /* WeatherError.swift */; };
 		3ED651AF286322DD00220FDF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3ED651AE286322DD00220FDF /* Alamofire */; };
+		C81C3AC92863850200DF3C13 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81C3AC72863850200DF3C13 /* CityDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		3ED651A62862FD3000220FDF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		3ED651A928630B7700220FDF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		3ED651AB2863190F00220FDF /* WeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherError.swift; sourceTree = "<group>"; };
+		C81C3AC72863850200DF3C13 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		3ED651642862B2C800220FDF /* WeatherMap */ = {
 			isa = PBXGroup;
 			children = (
+				C81C3AC6286384DA00DF3C13 /* DetailViewController */,
 				3ED651A828630B0A00220FDF /* MainViewController */,
 				3ED651A02862F8D600220FDF /* Repositories */,
 				3ED6519D2862F74100220FDF /* Constant */,
@@ -185,6 +188,14 @@
 				3ED651A928630B7700220FDF /* MainViewModel.swift */,
 			);
 			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		C81C3AC6286384DA00DF3C13 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C81C3AC72863850200DF3C13 /* CityDetailViewController.swift */,
+			);
+			path = DetailViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 				3ED6516A2862B2C800220FDF /* MainViewController.swift in Sources */,
 				3ED651A52862FC6100220FDF /* WeatherRDS.swift in Sources */,
 				3ED6519F2862F76D00220FDF /* Constant.swift in Sources */,
+				C81C3AC92863850200DF3C13 /* CityDetailViewController.swift in Sources */,
 				3ED651662862B2C800220FDF /* AppDelegate.swift in Sources */,
 				3ED651682862B2C800220FDF /* SceneDelegate.swift in Sources */,
 				3ED651A72862FD3000220FDF /* HTTPMethod.swift in Sources */,

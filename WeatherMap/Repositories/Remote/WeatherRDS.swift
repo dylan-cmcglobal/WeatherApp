@@ -38,7 +38,7 @@ extension WeatherAPI {
 
 class WeatherRDS {
     func getWeather(params: String, completion: @escaping (_ result: WeatherBaseResponse?, _ error: WeatherError?) -> Void) {
-        AF.request(WeatherAPI.searchByName(params: params).path).validate().responseData { response in
+        AF.request(WeatherAPI.searchByName(params: params.replacingOccurrences(of: " ", with: "%20")).path).validate().responseData { response in
             switch response.result {
             case .success(_):
                 guard let data = response.data else {
